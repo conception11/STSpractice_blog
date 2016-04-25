@@ -9,7 +9,10 @@
 </head>
 <body>
 	<c:out value="<xmp>" escapeXml="true"></c:out>
-	<h2>Hello! ${name}</h2>
+	<h2>className: ${className}</h2>
+	<h2>Name: ${name}</h2>
+	<h2>age: ${age}</h2>
+	<h2>ID: ${id}</h2>
 	<div>JSP version</div>
 </body>
 </html>
