@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/webjars/origoni-startbootstrap-clean-blog/1.0.3/css/clean-blog.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+	<!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -48,30 +48,49 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('/imagestore/heart.gif');width:100%;height:100%;">
+    <header class="intro-header" style="background-image: url('/imagestore/banner.jpg'); width:100%; height:100%;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1><c:out value="${post.subject}" escapeXml="true"></c:out></h1>
-                        <h2 class="subheading">부제목</h2>
-                        <span class="meta">Posted by <a href="#">Origoni</a> on ${post.regDate}</span>
+                    <div class="site-heading">
+                        <h1>Spring Blog</h1>
+                        <hr class="small">
+                        <span class="subheading">Spring Blog form Millky</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Post Content -->
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    ${post.content}
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            
+			<c:forEach var="post" items="${postList}">
+				<div class="post-preview">
+                    <a href="/post/${post.id}">
+                        <h2 class="post-title">
+                            <c:out value="${post.subject}" escapeXml="true"></c:out>
+                        </h2>
+                        <h3 class="post-subtitle">
+                            부 제목
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Origoni</a> on ${post.regDate}</p>
                 </div>
+                <hr>
+			</c:forEach>
+			
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </article>
+    </div>
 
     <hr>
 
